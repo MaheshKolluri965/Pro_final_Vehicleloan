@@ -1,0 +1,24 @@
+h1{
+    -position: sticky;
+    margin-top: 200px;
+    font-size: 70px;
+    font-weight: bold;
+    font-style: italic;    
+}
+
+.contact {
+    background-image: url('/assets/contact.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-color: rgba(0, 0, 0, 0.9);
+    -background-blend-mode: hard-light;
+
+    width: 100%;  
+    text-align: center; 
+    padding: 20px;
+    max-width: 100%;
+    height: auto;
+    color: blue;
+}
+  

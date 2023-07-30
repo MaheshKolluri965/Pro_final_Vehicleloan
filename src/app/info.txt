@@ -1,0 +1,4 @@
+- I am using angular 15.
+- I have created new project and home page components.
+- Completed footer. used routing.
+ 

@@ -1,0 +1,137 @@
+*{
+    color: whitesmoke;
+}
+
+h1{
+    margin-top: 120px;
+    font-size: 70px;
+    font-weight: bold;
+    font-style: italic; 
+}
+
+.color-changing-text  h1 {
+    animation: changeColors 15s infinite;
+  }
+  
+  @keyframes changeColors {
+    0% { color: black; }
+    10% { color: green; }
+    20% { color: red; }
+    30% { color: blue; }
+    45% { color: greenyellow; }
+    50% { color: orange; }
+    60% { color: greenyellow; }
+    70% { color: aqua; }
+    80% { color: white; }
+    90% { color: black; }
+    100% { color: blue; }
+  }
+  
+
+  /* Apply the animation to the element inside the div */
+  /*
+@keyframes changeColor {
+    0% {
+      background-color: black;
+    }
+    50% {
+      background-color: blue;
+    }
+    100% {
+      background-color: black;
+    }
+  }
+
+  h2 {
+    margin-left: 500px;
+    font-style: italic;
+    border: 5px solid transparent; 
+    animation: changeColor 10s infinite;
+    padding: 20px;
+    text-align: center;
+    border-radius: 40px;
+  }
+  */
+.quee_text h2{
+  animation: changeColors 15s infinite;
+  font-weight: bold;
+}
+  
+.scrolling-text {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrolling-text h2 {
+  animation: scrollText 10s linear infinite;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+    0% { color: black; }
+    10% { color: green; }
+    20% { color: red; }
+    30% { color: blue; }
+    45% { color: greenyellow; }
+    50% { color: orange; }
+    60% { color: greenyellow; }
+    70% { color: aqua; }
+    80% { color: white; }
+    90% { color: black; }
+    100% { color: blue; }
+}
+
+.box1{
+  border-radius: 20px;
+  padding: 30px;
+  background-color: #0000007f;
+  margin-top: 20px;
+  font-size: 15px;
+  font-style: italic; 
+}
+
+strong{
+  font-size: 20px;
+  color: blue;
+}
+
+
+  .body-styles {
+    animation: changeBackground 25s infinite;   
+
+    -background-image: url('/assets/car.jpg');
+    background-size: cover; /* Set the image to cover the entire container */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image horizontally and vertically */
+    background-color: rgba(0, 0, 0, 0.9); /* kust for adding a background */
+    width: 100%;  /* Adjust the height to fit your content */
+    text-align: center; /* Center the content inside the container */
+    padding: 20px;
+    max-width: 100%;
+    height: auto;
+}
+  
+  @keyframes changeBackground {
+    0% {
+      background-image: url('/assets/car2.jpg');
+    }
+    25% {
+      background-image: url('/assets/car10.jpg');
+    }
+    50% {
+      background-image: url('/assets/car11.jpg');
+    }
+    75% {
+      background-image: url('/assets/car4.png');
+    }
+    100% {
+      background-image: url('/assets/car7.jpg');
+    }
+  }
+  

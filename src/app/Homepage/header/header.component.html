@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg fixed-top" id="head">
+    <div class="container-fluid">
+        <div class="logo">
+            <div class="rotate-container">
+                <a class="navbar-brand" id="rotate-element" routerLink="/">MJ</a>
+            </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" aria-current="page" (click)="goToHome()">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="goToUserLogin()">Login</a> 
+                </li> 
+                <li class="nav-item">   
+                    <a class="nav-link" (click)="goToUserSignUp()">Signup</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" (click)="goToAdminLogin()">Admin Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" (click)="goToEmiCal()">EMI Calculator</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" (click)="goToAboutUs()">AboutUS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" (click)="goToContactUs()">Contact us</a>
+                </li>
+
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>

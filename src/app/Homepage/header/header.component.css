@@ -1,0 +1,71 @@
+/* Styles for the logo container */
+.logo {
+    width: 80px;
+    height: 80px;
+    text-shadow: 2px 2px 4px;
+    border-radius: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 400px;
+    background-color: black;
+    /* Perspective for 3D rotation */
+}
+
+/* Styles for the rotation container */
+.rotate-container {
+    margin-top: -10px;
+    margin-left: 15px;
+    animation: rotate 4s linear infinite;
+    /* Add a 3s delay after rotation */
+}
+
+/* Keyframe animation for rotation */
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(90deg);
+    }
+    to {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+}
+
+
+/* Styles for the text inside the logo */
+#rotate-element {
+    font-size: 50px;
+    font-weight: bold;
+    color: blue;
+    justify-content: center;
+}
+
+/* Whole nav bar style */
+nav{
+   /* background-color: rgba(255, 255, 255, 0.5);  Set the alpha value to control transparency */
+    z-index: 1; /* Ensure the box appears above other content */
+    background: transparent;
+}
+
+/* pages in navbar */
+.navbar-nav {
+    background-color: #0000007f;
+    border-radius: 30px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+
+.nav-link{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-link:hover{
+    font-size: 19px;
+    color: blue;
+}
+
+.navbar-toggler{
+    background-color: blue;
+}
