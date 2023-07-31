@@ -1,4 +1,4 @@
-package com.lti.app.service;
+package com.lti.app.emiCalculator;
 
 import java.util.List;
 
@@ -7,14 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.app.pojo.Customer;
-import com.lti.app.pojo.EmiCalculator;
 import com.lti.app.repo.CustomerRepo;
-import com.lti.app.repo.EmicalRepo;
 
 
 @Service
 @Transactional
-public class EmiCalculatorService implements EmiCalService {
+public class EmiCalServiceImpl implements EmiCalService {
 
 
 	@Autowired
@@ -22,37 +20,37 @@ public class EmiCalculatorService implements EmiCalService {
 	
 	
 	@Override
-	public void emidata(EmiCalculator emicalculator) {
+	public void emidata(EmiCalculatorEntity emicalculator) {
 		// TODO Auto-generated method stub
 		eRepo.emidata(emicalculator);
 	}
 
 	@Override
-	public List<EmiCalculator> getemi() {
+	public List<EmiCalculatorEntity> getemi() {
 		// TODO Auto-generated method stub
 		return eRepo.getemi();
 	}
 	
 	
 	@Override
-	public EmiCalculator calculatemi(EmiCalculator emicalculator) {
+	public EmiCalculatorEntity calculatemi(EmiCalculatorEntity emicalculator) {
 		// TODO Auto-generated method stub
 		return eRepo.calculatemi(emicalculator);
 	}
 
 	@Override
-	public Double loanoffer1(EmiCalculator emicalculator) {
+	public Double loanoffer1(EmiCalculatorEntity emicalculator) {
 		// TODO Auto-generated method stub
 		return eRepo.loanoffers1(emicalculator);
 	}
 	
 	@Override
-	public Double loanoffer2(EmiCalculator emicalculator) {
+	public Double loanoffer2(EmiCalculatorEntity emicalculator) {
 		// TODO Auto-generated method stub
 		return eRepo.loanoffers2(emicalculator);
 	}
 	@Override
-	public Double loanoffer3(EmiCalculator emicalculator) {
+	public Double loanoffer3(EmiCalculatorEntity emicalculator) {
 		// TODO Auto-generated method stub
 		return eRepo.loanoffers3(emicalculator);
 	}

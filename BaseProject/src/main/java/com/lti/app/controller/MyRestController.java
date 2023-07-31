@@ -25,24 +25,24 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.lti.app.dto.Imagedto;
+import com.lti.app.emiCalculator.EmiCalculatorEntity;
+import com.lti.app.emiCalculator.EmiCalServiceImpl;
 import com.lti.app.pojo.AdminLogin;
 import com.lti.app.pojo.Customer;
-import com.lti.app.pojo.EmiCalculator;
 import com.lti.app.pojo.Image;
 import com.lti.app.pojo.LoanDetails;
 import com.lti.app.pojo.UserLogin;
 import com.lti.app.repo.LoanRepo;
 import com.lti.app.service.AdminLoginService;
 import com.lti.app.service.CustomerService;
-import com.lti.app.service.EmiCalculatorService;
 import com.lti.app.service.ImageService;
 import com.lti.app.service.LoanService;
 import com.lti.app.service.UserLoginService;
 
 
 @RestController
-@RequestMapping("/rest/api")
 @CrossOrigin("http://localhost:4200")
+@RequestMapping("/rest/api") 
 public class MyRestController {
 	
 		
@@ -50,7 +50,7 @@ public class MyRestController {
 		CustomerService custservice;
 		
 		@Autowired
-		private EmiCalculatorService emiservice;
+		private EmiCalServiceImpl emiservice;
 				
 		@GetMapping("/customers")
 		public List<Customer> getAllCustomers(){
@@ -72,37 +72,9 @@ public class MyRestController {
 
 		}
 //--------------------------------EMI----------------------------------------------		
-		@GetMapping("/customers/emi")
-		public List<EmiCalculator> getAllEmi(){
-			return emiservice.getemi();
-		}
-		
-		@PostMapping("/customers/emi")
-		public EmiCalculator emicalculation(@RequestBody EmiCalculator emi) {
-			return emiservice.calculatemi(emi);
-			
-		}
-		
-		@PutMapping("/customers/emi")
-		public boolean emicalculationdata(@RequestBody EmiCalculator emi) {
-			 emiservice.emidata(emi);
-			 return true;
-		}
 		
 		
-		@PutMapping("/customers/emi/loanoffer1")
-		public Double loanoffers1(@RequestBody EmiCalculator emi) {
-			return emiservice.loanoffer1(emi);
-		}
 		
-		@PutMapping("/customers/emi/loanoffer2")
-		public Double loanoffers2(@RequestBody EmiCalculator emi) {
-			return emiservice.loanoffer2(emi);
-		}
-		@PutMapping("/customers/emi/loanoffer3")
-		public Double loanoffers3(@RequestBody EmiCalculator emi) {
-			return emiservice.loanoffer3(emi);
-		}
 		
 //-----------------------------IMAGE UPLOAD-----------------------------------------		
 		@Autowired

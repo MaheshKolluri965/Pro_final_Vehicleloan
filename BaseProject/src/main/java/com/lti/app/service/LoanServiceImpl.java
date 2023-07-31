@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lti.app.emiCalculator.EmicalRepo;
 import com.lti.app.pojo.LoanDetails;
-import com.lti.app.repo.EmicalRepo;
 import com.lti.app.repo.LoanRepo;
 
 

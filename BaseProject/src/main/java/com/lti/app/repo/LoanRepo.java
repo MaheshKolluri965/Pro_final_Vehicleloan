@@ -2,8 +2,8 @@ package com.lti.app.repo;
 
 import java.util.List;
 
+import com.lti.app.emiCalculator.EmiCalculatorEntity;
 import com.lti.app.pojo.Customer;
-import com.lti.app.pojo.EmiCalculator;
 import com.lti.app.pojo.LoanDetails;
 
 public interface LoanRepo {

@@ -10,8 +10,21 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.lti.app.security.register.RegisterEntity;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name="customerdetails")
 public class Customer {
@@ -101,278 +114,9 @@ private UserLogin loanid;
 @JoinColumn(name="LOAN_ID",referencedColumnName = "LOAN_ID")
 private LoanDetails loandet;
 
+@OneToOne
+@JoinColumn(name = "register_email_id") // specify the foreign key column
+private RegisterEntity registerEmail;
 
-	
-	
-	//---------------------------------
-	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public Customer(String custemail, String custfname, String custlname, String custage, String custgender,
-			String custmobileno, String emptype, Double empannualsalary, String empexistingemi, String vehcarcompany,
-			String vehcarmodel, String vehexshowroomprice, Double vehonroadprice, Double custcbilscore,
-			String custaddress, String custstate, String custcity, String custpincode, String custloanamount,
-			String custloanroi, String custloantenure, String custloancarprice) {
-		super();
-		this.custemail = custemail;
-		this.custfname = custfname;
-		this.custlname = custlname;
-		this.custage = custage;
-		this.custgender = custgender;
-		this.custmobileno = custmobileno;
-		this.emptype = emptype;
-		this.empannualsalary = empannualsalary;
-		this.empexistingemi = empexistingemi;
-		this.vehcarcompany = vehcarcompany;
-		this.vehcarmodel = vehcarmodel;
-		this.vehexshowroomprice = vehexshowroomprice;
-		this.vehonroadprice = vehonroadprice;
-		this.custcbilscore = custcbilscore;
-		this.custaddress = custaddress;
-		this.custstate = custstate;
-		this.custcity = custcity;
-		this.custpincode = custpincode;
-		this.custloanamount = custloanamount;
-		this.custloanroi = custloanroi;
-		this.custloantenure = custloantenure;
-		this.custloancarprice = custloancarprice;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Customer [custemail=" + custemail + ", custfname=" + custfname + ", custlname=" + custlname
-				+ ", custage=" + custage + ", custgender=" + custgender + ", custmobileno=" + custmobileno
-				+ ", emptype=" + emptype + ", empannualsalary=" + empannualsalary + ", empexistingemi=" + empexistingemi
-				+ ", vehcarcompany=" + vehcarcompany + ", vehcarmodel=" + vehcarmodel + ", vehexshowroomprice="
-				+ vehexshowroomprice + ", vehonroadprice=" + vehonroadprice + ", custcbilscore=" + custcbilscore
-				+ ", custaddress=" + custaddress + ", custstate=" + custstate + ", custcity=" + custcity
-				+ ", custpincode=" + custpincode + ", custloanamount=" + custloanamount + ", custloanroi=" + custloanroi
-				+ ", custloantenure=" + custloantenure + ", custloancarprice=" + custloancarprice + "]";
-	}
-
-
-	public String getCustemail() {
-		return custemail;
-	}
-
-
-	public void setCustemail(String custemail) {
-		this.custemail = custemail;
-	}
-
-
-	public String getCustfname() {
-		return custfname;
-	}
-
-
-	public void setCustfname(String custfname) {
-		this.custfname = custfname;
-	}
-
-
-	public String getCustlname() {
-		return custlname;
-	}
-
-
-	public void setCustlname(String custlname) {
-		this.custlname = custlname;
-	}
-
-
-	public String getCustage() {
-		return custage;
-	}
-
-
-	public void setCustage(String custage) {
-		this.custage = custage;
-	}
-
-
-	public String getCustgender() {
-		return custgender;
-	}
-
-
-	public void setCustgender(String custgender) {
-		this.custgender = custgender;
-	}
-
-
-	public String getCustmobileno() {
-		return custmobileno;
-	}
-
-
-	public void setCustmobileno(String custmobileno) {
-		this.custmobileno = custmobileno;
-	}
-
-
-	public String getEmptype() {
-		return emptype;
-	}
-
-
-	public void setEmptype(String emptype) {
-		this.emptype = emptype;
-	}
-
-
-	public Double getEmpannualsalary() {
-		return empannualsalary;
-	}
-
-
-	public void setEmpannualsalary(Double empannualsalary) {
-		this.empannualsalary = empannualsalary;
-	}
-
-
-	public String getEmpexistingemi() {
-		return empexistingemi;
-	}
-
-
-	public void setEmpexistingemi(String empexistingemi) {
-		this.empexistingemi = empexistingemi;
-	}
-
-
-	public String getVehcarcompany() {
-		return vehcarcompany;
-	}
-
-
-	public void setVehcarcompany(String vehcarcompany) {
-		this.vehcarcompany = vehcarcompany;
-	}
-
-
-	public String getVehcarmodel() {
-		return vehcarmodel;
-	}
-
-
-	public void setVehcarmodel(String vehcarmodel) {
-		this.vehcarmodel = vehcarmodel;
-	}
-
-
-	public String getVehexshowroomprice() {
-		return vehexshowroomprice;
-	}
-
-
-	public void setVehexshowroomprice(String vehexshowroomprice) {
-		this.vehexshowroomprice = vehexshowroomprice;
-	}
-
-
-	public Double getVehonroadprice() {
-		return vehonroadprice;
-	}
-
-
-	public void setVehonroadprice(Double vehonroadprice) {
-		this.vehonroadprice = vehonroadprice;
-	}
-
-
-	public Double getCustcbilscore() {
-		return custcbilscore;
-	}
-
-
-	public void setCustcbilscore(Double custcbilscore) {
-		this.custcbilscore = custcbilscore;
-	}
-
-
-	public String getCustaddress() {
-		return custaddress;
-	}
-
-
-	public void setCustaddress(String custaddress) {
-		this.custaddress = custaddress;
-	}
-
-
-	public String getCuststate() {
-		return custstate;
-	}
-
-
-	public void setCuststate(String custstate) {
-		this.custstate = custstate;
-	}
-
-
-	public String getCustcity() {
-		return custcity;
-	}
-
-
-	public void setCustcity(String custcity) {
-		this.custcity = custcity;
-	}
-
-
-	public String getCustpincode() {
-		return custpincode;
-	}
-
-
-	public void setCustpincode(String custpincode) {
-		this.custpincode = custpincode;
-	}
-
-
-	public String getCustloanamount() {
-		return custloanamount;
-	}
-
-
-	public void setCustloanamount(String custloanamount) {
-		this.custloanamount = custloanamount;
-	}
-
-
-	public String getCustloanroi() {
-		return custloanroi;
-	}
-
-
-	public void setCustloanroi(String custloanroi) {
-		this.custloanroi = custloanroi;
-	}
-
-
-	public String getCustloantenure() {
-		return custloantenure;
-	}
-
-
-	public void setCustloantenure(String custloantenure) {
-		this.custloantenure = custloantenure;
-	}
-
-
-	public String getCustloancarprice() {
-		return custloancarprice;
-	}
-
-
-	public void setCustloancarprice(String custloancarprice) {
-		this.custloancarprice = custloancarprice;
-	}
-	
 	
 }

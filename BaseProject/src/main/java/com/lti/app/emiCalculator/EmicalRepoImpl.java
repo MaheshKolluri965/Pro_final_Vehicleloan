@@ -1,29 +1,28 @@
-package com.lti.app.repo;
+package com.lti.app.emiCalculator;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Repository;
 
-import com.lti.app.pojo.EmiCalculator;
-import com.lti.app.springdatajpa.MyJPAEMIRepo;
 import com.lti.app.springdatajpa.MyJPARepo;
 
 @Repository
 public class EmicalRepoImpl implements EmicalRepo{
 
 	@Autowired
-	MyJPAEMIRepo jpaERepo;
+	EmiCalculatorJPARepo jpaERepo;
 
 	
 	@Override
-	public void emidata(EmiCalculator emicalculator) {
+	public void emidata(EmiCalculatorEntity emicalculator) {
 			jpaERepo.save(emicalculator);
 	}
 	
 	
 	@Override
-	public List<EmiCalculator> getemi() {
+	public List<EmiCalculatorEntity> getemi() {
 		// TODO Auto-generated method stub
 		return jpaERepo.findAll();
 
@@ -32,7 +31,7 @@ public class EmicalRepoImpl implements EmicalRepo{
 	
 	
 	@Override
-	public EmiCalculator calculatemi(EmiCalculator emicalculator) {
+	public EmiCalculatorEntity calculatemi(EmiCalculatorEntity emicalculator) {
 		
 			Double principal = emicalculator.getLoanamount();
 			Double time = emicalculator.getLoantenure() * 12;
@@ -40,16 +39,16 @@ public class EmicalRepoImpl implements EmicalRepo{
 			
 			Double emiAmount =principal*rate*Math.pow(1+rate,time)/(Math.pow(1+rate,time)-1);
 			
-			Double emipm = emicalculator.setEmipm((double) Math.round(emiAmount));
-			Double totalPay = emicalculator.setTotalPayment((double) Math.round(emiAmount*time));
-			emicalculator.setRoiAmount(totalPay - principal);
+			emicalculator.setEmipm((double) Math.round(emiAmount));
+			emicalculator.setTotalPayment((double) Math.round(emiAmount*time));
+			emicalculator.setRoiAmount(emicalculator.getTotalPayment() - principal);
 
 			return emicalculator;
 			//return (double) Math.round(emiamount);
 			//return jpaERepo.save(emicalculator); if you use this it will store this data which is unneccesary
 	}
 	@Override
-	public Double loanoffers1(EmiCalculator emicalculator) {
+	public Double loanoffers1(EmiCalculatorEntity emicalculator) {
 		
 			Double principal = emicalculator.getLoanamount();
 			Double time = 2.0;
@@ -66,7 +65,7 @@ public class EmicalRepoImpl implements EmicalRepo{
 	}
 	
 	@Override
-	public Double loanoffers2(EmiCalculator emicalculator) {
+	public Double loanoffers2(EmiCalculatorEntity emicalculator) {
 		
 			Double principal = emicalculator.getLoanamount();
 			Double time = 4.0;
@@ -82,7 +81,7 @@ public class EmicalRepoImpl implements EmicalRepo{
 			//jpaERepo.save(emicalculator);
 	}
 	@Override
-	public Double loanoffers3(EmiCalculator emicalculator) {
+	public Double loanoffers3(EmiCalculatorEntity emicalculator) {
 		
 			Double principal = emicalculator.getLoanamount();
 			Double time = 8.0;

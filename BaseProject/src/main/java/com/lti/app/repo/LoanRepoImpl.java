@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.lti.app.emiCalculator.EmiCalculatorEntity;
+import com.lti.app.emiCalculator.EmiCalculatorJPARepo;
 import com.lti.app.pojo.Customer;
-import com.lti.app.pojo.EmiCalculator;
 import com.lti.app.pojo.LoanDetails;
 import com.lti.app.springdatajpa.LoanJPARepo;
-import com.lti.app.springdatajpa.MyJPAEMIRepo;
 
 @Repository
 public class LoanRepoImpl implements LoanRepo {
