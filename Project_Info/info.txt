@@ -2,3 +2,25 @@
 - I have created new project and home page components.
 - Completed footer. used routing.
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

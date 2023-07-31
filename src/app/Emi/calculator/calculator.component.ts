@@ -16,10 +16,9 @@ export class CalculatorComponent {
 
   public emi_int_amout = 0;
   public emi_total_amount = 0;
-
   public emi = 0;
 
-  calculateEMI(emiFrom: NgForm): void {
+  calculateEMI(emiForm: NgForm): void {
     this._emiService.emiCalculator(this.emiRequest).subscribe({
       next: (data: any) => {
         this.emi = data.emipm,

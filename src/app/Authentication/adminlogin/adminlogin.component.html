@@ -2,20 +2,37 @@
 <app-header></app-header>
 
 <div class="loginform">
-    
-    <form class="form">
+
+    <form class="form" #log="ngForm" (ngSubmit)="adminloginForm(log)">
         <div class="title">
-            <h1>Admin Login</h1>
+            <h1>Login</h1>
         </div>
         <div class="details">
-            <div class="mb-3">
+            <div class="form-group">
                 <label class="form-label">Email address</label>
-                <input type="email" class="form-control">
+                <div class="mb-3">
+                    <input type="email" name="email" #email="ngModel" [(ngModel)]="login.email" required class="form-control" placeholder="email">
+                    <div>
+                        <small class="text-danger" [class.d-none]="email.valid || email.untouched">email is
+                            required</small>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
+
+            <div class="form-group">
                 <label class="form-label">Password</label>
-                <input type="password" class="form-control">
+                <div class="mb-3">
+                    <input type="password" name="password" #password="ngModel" [(ngModel)]="login.password" required="" class="form-control"
+                        placeholder="password">
+                    <div>
+                        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is
+                            required</small>
+                    </div>
+                </div>
+                <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
             </div>
+
+            <!--
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input">
                 <label class="form-check-label">Check me out</label>
@@ -24,9 +41,10 @@
             <div class="forgotpassword">
                 <a routerLink="/">forgot password?</a>
             </div>
+            -->
             <br>
             <div class="submit">
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="submit" [disabled]="log.form.invalid" class="btn btn-success">Submit</button>
             </div>
             <br><br>
         </div>

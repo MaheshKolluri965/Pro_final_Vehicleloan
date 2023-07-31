@@ -16,6 +16,7 @@ import { AdminloginComponent } from './Authentication/adminlogin/adminlogin.comp
 import { SignupComponent } from './Authentication/signup/signup.component';
 
 import { EmiService } from './Services/emi.service';
+import { RegistrationService } from './Services/registration.service';
 
 import { FormsModule } from '@angular/forms';
 
@@ -39,7 +40,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule
   ],
   providers: [
-    EmiService
+    EmiService,
+    RegistrationService
   ],
   bootstrap: [AppComponent]
 })
